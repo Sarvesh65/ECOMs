@@ -1,0 +1,26 @@
+.carousel-item{
+    height: 24rem;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
+.carouselExampleIndicators{
+    margin-top: 100px;
+
+}
+.container{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 30px;
+}
+.overlay-image{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right:0;
+    top:0;
+    background-position: center;
+    background-size: cover;
+}

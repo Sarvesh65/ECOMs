@@ -1,0 +1,64 @@
+<!-- <div class="row">
+    <div class="offset-md-4 col-4">
+        <div class="card mt-5 p-4 border border-dark">
+            <form [formGroup]="registerForm">
+                <div class="form-group mb-3">
+                <h1 class="text-center">Register</h1>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="exampleInputUsername" class="form-label">Username</label>
+                  <input formControlName="username" type="text" class="form-control"   id="exampleInputUsername" aria-describedby="emailHelp">
+                  <div id="userHelp" class="form-text"></div>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input formControlName="email" type="email" class="form-control"   id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input formControlName="password" type="password" class="form-control"   id="exampleInputPassword1">
+                </div>
+                <div class="form-group mb-3">
+                  <label for="exampleInputPassword2" class="form-label">Confirm Password</label>
+                  <input formControlName="cpass" type="password" class="form-control"   id="exampleInputPassword2">
+                </div>
+
+                <div class="form-group mb-3" style="text-align: center;">
+                <button type="button" class="btn btn-primary"(click)="register()">Register</button>
+
+                </div>
+              </form>
+        </div>
+    </div>
+</div>
+ -->
+
+<main class="page registration-page">
+  <section class="clean-block clean-form dark">
+    <div class="container">
+      <div class="block-heading" style="padding-top: 40px">
+        <h2 class="text-info">Registration</h2>
+      </div>
+      <form [formGroup]="registerForm">
+        <div class="mb-3">
+          <label class="form-label" for="name">Username</label
+          ><input class="form-control item" formControlName="username" type="text" id="name" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="email">Email</label
+          ><input class="form-control item" formControlName="email"  type="email" id="email" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="password">Password</label
+          ><input class="form-control item" formControlName="password" type="password" id="password" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="password">Password</label
+          ><input class="form-control item"  formControlName="cpass" type="password" id="password" />
+        </div>
+        <button class="btn btn-primary" (click)="register()" type="submit">Sign Up</button>
+      </form>
+    </div>
+  </section>
+</main>
