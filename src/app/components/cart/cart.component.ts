@@ -29,7 +29,7 @@ public products :any=[];
   emptycart(){
     this.cartService.removeAll();
   }
-  // tamt(event:any){
-    // this.totalamt =  this.cartService.onePrice(event.value);
-  // }
+  tamt(event:any){
+    this.totalamt =  this.cartService.onePrice(event.value);
+  }
 }

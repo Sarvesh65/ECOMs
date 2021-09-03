@@ -26,7 +26,7 @@ export class CartService {
   totalPrice(): number {
     let gtotal = 0;
     this.cartItemList.map((a: any) => {
-      gtotal += a.total;
+      gtotal =gtotal+ a.total;
     });
     return gtotal;
   }
