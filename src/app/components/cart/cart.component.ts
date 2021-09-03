@@ -7,7 +7,8 @@ import { CartService } from 'src/app/service/cart.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-
+  total=1;
+  totalamt=0;
 public products :any=[];
   public gTotal !: number;
   constructor(private cartService: CartService) { }
@@ -19,6 +20,7 @@ public products :any=[];
       this.gTotal = this.cartService.totalPrice();
     })
     console.log(this.products)
+    // this.totalamt = this.products.price;
   }
   removeItem(item:any){
     this.cartService.removeOne(item);
@@ -27,4 +29,7 @@ public products :any=[];
   emptycart(){
     this.cartService.removeAll();
   }
+  // tamt(event:any){
+    // this.totalamt =  this.cartService.onePrice(event.value);
+  // }
 }

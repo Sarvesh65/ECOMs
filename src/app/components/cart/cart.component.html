@@ -55,23 +55,32 @@
   <main class="page shopping-cart-page">
     <section class="clean-block clean-cart dark">
       <div class="container">
-        <div class="block-heading" style="height: 103px; padding-top: 39px; margin-bottom: 7px">
+        <div
+          class="block-heading"
+          style="height: 103px; padding-top: 39px; margin-bottom: 7px"
+        >
           <h2 class="text-info">Shopping Cart</h2>
         </div>
         <div class="content">
           <div class="row g-0">
             <div class="col-md-12 col-lg-8">
               <div class="items">
-                <div class="product" *ngFor="let item of products; let i = index">
+                <div
+                  class="product"
+                  *ngFor="let item of products; let i = index"
+                >
                   <div class="row justify-content-center align-items-center">
                     <div class="col-md-3">
                       <div class="product-image">
-                        <img class="img-fluid d-block mx-auto image" src="{{ item.image }}" />
+                        <img
+                          class="img-fluid d-block mx-auto image"
+                          src="{{ item.image }}"
+                        />
                       </div>
                     </div>
-                    <div class="col-md-5 product-info">
+                    <div class="col-md-4 product-info">
                       <a class="product-name" href="#">{{ item.title }}</a>
-                      <div class="product-specs">
+                      <div class="product-specs extra-text">
                         {{ item.description }}
                         <!-- <div><span>Display:&nbsp;</span><span class="value">5 inch</span></div>
                                             <div><span>RAM:&nbsp;</span><span class="value">4GB</span></div>
@@ -80,11 +89,28 @@
                     </div>
                     <div class="col-6 col-md-2 quantity">
                       <label class="form-label d-none d-md-block" for="quantity">Quantity</label>
-                      <input type="number" id="number" class="form-control quantity-input"
-                        value="{{ item.quantity }}" />
+                      <input
+                        type="number"
+                        id="number"
+                        [ngModel]="total"
+                        (ngModelChange)="total = $event"
+                        class="form-control quantity-input"
+                        value="{{ item.quantity }}"
+                      />
                     </div>
                     <div class="col-6 col-md-2 price">
                       <span>{{ item.price }}</span>
+                      <br />
+                      <br />
+                    </div>
+                    <div class="col-6 col-md-1">
+                      <a (click)="removeItem(item)" class="top danger">
+                        <i class="fas fa-trash-alt"></i>
+                      </a>
+                      <br />
+                      Total
+                      <span>{{ item.price * total }}</span>
+                      <!-- <span>{{    totalamt }}</span> -->
                     </div>
                   </div>
                 </div>
@@ -97,11 +123,35 @@
                 <!-- <h4><span class="text">Discount</span><span class="price">$0</span></h4> -->
                 <!-- <h4><span class="text">Shipping</span><span class="price">$0</span></h4> -->
                 <h4>
-                  <span class="text">Total</span><span class="price">$ {{ gTotal }} </span>
+                  <span class="text">Total</span
+                  ><span class="price">$ {{ gTotal }} </span>
                 </h4>
-                <button class="btn btn-primary btn-lg d-block w-100"  routerLink="/shippingaddress" type="button">
+                <button
+                  class="btn btn-primary btn-lg d-block w-100"
+                  routerLink="/shippingaddress"
+                  type="button"
+                >
                   Checkout
                 </button>
+                <hr />
+                <div class="row d-flex justify-content-center">
+                  <div class="col">
+                    <button
+                      (click)="emptycart()"
+                      class="btn btn-danger btn-lg d-block w-100"
+                    >
+                      Empty Cart
+                    </button>
+                  </div>
+                  <div class="col">
+                    <button
+                      routerLink="/product"
+                      class="btn btn-primary btn-lg d-block w-100"
+                    >
+                      Shop More
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -119,7 +169,8 @@
     <div class="center">
       <img
         src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90"
-        alt="" />
+        alt=""
+      />
       <h4>Your cart is empty!</h4>
       <h6>Add item to it now</h6>
       <button routerLink="/product" class="btn btn-primary">Shop Now</button>
